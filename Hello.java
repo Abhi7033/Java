@@ -1083,3 +1083,271 @@
 //         }
 //     }
 // }
+// public class Hello {
+//     // write your code here
+//     public double width;
+//     public double height;
+
+//     public Hello(double width, double height) {
+//         if(width<0){
+//             width=0;
+//         }
+//         if(height<0){
+//             height=0;
+//         }
+//         this.width = width;
+//         this.height = height;
+
+//     }
+
+//     public Hello() {
+//     }
+
+//     public double getWidth() {
+//         return width;
+//     }
+
+//     public double getHeight() {
+//         return height;
+//     }
+
+//     public void setWidth(double width) {
+//         this.width = width;
+//         if(width<0){
+//             width=0;
+//         }
+
+//     }
+
+//     public void setHeight(double height) {
+//         this.height = height;
+//         if(height<0){
+//             height=0;
+//         }
+//     }
+//     public double getArea(){
+//         return height*width;
+//     }
+// }
+
+// INHERITANCE
+// public class Animal {
+
+//     private String type;
+//     private String size;
+//     private double weight;
+
+//     public Animal() {
+
+//     }
+
+//     public Animal(String type, String size, double weight) {
+//         this.type = type;
+//         this.size = size;
+//         this.weight = weight;
+//     }
+
+//     @Override
+//     public String toString() {
+//         return "Animal{" +
+//                 "type='" + type + '\'' +
+//                 ", size='" + size + '\'' +
+//                 ", weight=" + weight +
+//                 '}';
+//     }
+
+//     public void move(String speed) {
+//         System.out.println(type + " moves " + speed);
+//     }
+
+//     public void makeNoise() {
+//         System.out.println(type + " makes some kind of noise");
+//     }
+// }
+
+// public class Dog extends Animal {
+
+//     public Dog() {
+//         super("Mutt", "Big", 50);
+//     }
+// }
+
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         Animal animal = new Animal("Generic Animal", "Huge", 400);
+//         doAnimalStuff(animal, "slow");
+
+//         Dog dog = new Dog();
+//         doAnimalStuff(dog, "fast");
+//     }
+
+//     public static void doAnimalStuff(Animal animal, String speed) {
+
+//         animal.makeNoise();
+//         animal.move(speed);
+//         System.out.println(animal);
+//         System.out.println("_ _ _ _");
+//     }
+// }
+
+// String methods
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         printInformation("Hello World");
+//         printInformation("");
+//         printInformation("\t   \n");
+
+//         String helloWorld = "Hello World";
+//         System.out.printf("index of r = %d %n", helloWorld.indexOf('r'));
+//         System.out.printf("index of World = %d %n", helloWorld.indexOf("World"));
+
+//         System.out.printf("index of l = %d %n", helloWorld.indexOf('l'));
+//         System.out.printf("index of l = %d %n", helloWorld.lastIndexOf('l'));
+
+//         System.out.printf("index of l = %d %n", helloWorld.indexOf('l',
+//                 3));
+//         System.out.printf("index of l = %d %n", helloWorld.lastIndexOf('l',
+//                 8));
+
+//         String helloWorldLower = helloWorld.toLowerCase();
+//         if (helloWorld.equals(helloWorldLower)) {
+//             System.out.println("Values match exactly");
+//         }
+//         if (helloWorld.equalsIgnoreCase(helloWorldLower)) {
+//             System.out.println("Values match ignoring case");
+//         }
+
+//         if (helloWorld.startsWith("Hello")) {
+//             System.out.println("String starts with Hello");
+//         }
+//         if (helloWorld.endsWith("World")) {
+//             System.out.println("String ends with World");
+//         }
+//         if (helloWorld.contains("World")) {
+//             System.out.println("String contains World");
+//         }
+
+//         if (helloWorld.contentEquals("Hello World")) {
+//             System.out.println("Values match exactly");
+//         }
+//     }
+
+//     public static void printInformation(String string) {
+
+//         int length = string.length();
+//         System.out.printf("Length = %d %n", length);
+
+//         if (string.isEmpty()) {
+//             System.out.println("String is Empty");
+//             return;
+//         }
+
+//         if (string.isBlank()) {
+//             System.out.println("String is Blank");
+//         }
+
+//         System.out.printf("First char = %c %n", string.charAt(0));
+
+//         System.out.printf("Last char = %c %n", string.charAt(length - 1));
+//     }
+// }
+
+// some other string methods
+// public class StringMethods {
+
+//     public static void main(String[] args) {
+
+//         String birthDate = "25/11/1982";
+//         int startingIndex = birthDate.indexOf("1982");
+//         System.out.println("startingIndex = " + startingIndex);
+//         System.out.println("Birth year = " + birthDate.substring(startingIndex));
+
+//         System.out.println("Month = " + birthDate.substring(3, 5));
+
+//         String newDate = String.join("/", "25", "11", "1982");
+//         System.out.println("newDate = " + newDate);
+
+//         newDate = "25";
+//         newDate = newDate.concat("/");
+//         newDate = newDate.concat("11");
+//         newDate = newDate.concat("/");
+//         newDate = newDate.concat("1982");
+//         System.out.println("newDate = " + newDate);
+
+//         newDate = "25" + "/" + "11" + "/" + "1982";
+//         System.out.println("newDate = " + newDate);
+
+//         newDate = "25".concat("/").concat("11").concat("/")
+//                 .concat("1982");
+//         System.out.println("newDate = " + newDate);
+
+//         System.out.println(newDate.replace('/', '-'));
+//         System.out.println(newDate.replace("2", "00"));
+
+//         System.out.println(newDate.replaceFirst("/", "-"));
+//         System.out.println(newDate.replaceAll("/", "---"));
+
+//         System.out.println("ABC\n".repeat(3));
+//         System.out.println("-".repeat(20));
+
+//         System.out.println("ABC\n".repeat(3).indent(8));
+//         System.out.println("-".repeat(20));
+
+//         System.out.println("    ABC\n".repeat(3).indent(-2));
+//         System.out.println("-".repeat(20));
+//     }
+// }
+
+// StringBuilder
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         String helloWorld = "Hello" + " World";
+//         helloWorld.concat(" and Goodbye");
+
+//         StringBuilder helloWorldBuilder = new StringBuilder("Hello" + " World");
+//         helloWorldBuilder.append(" and Goodbye");
+
+//         printInformation(helloWorld);
+//         printInformation(helloWorldBuilder);
+
+//         StringBuilder emptyStart = new StringBuilder();
+//         emptyStart.append("a".repeat(57));
+
+//         StringBuilder emptyStart32 = new StringBuilder(32);
+//         emptyStart32.append("a".repeat(17));
+
+//         printInformation(emptyStart);
+//         printInformation(emptyStart32);
+
+//         StringBuilder builderPlus = new StringBuilder("Hello" + " World");
+//         builderPlus.append(" and Goodbye");
+
+//         builderPlus.deleteCharAt(16).insert(16, 'g');
+//         System.out.println(builderPlus);
+
+//         builderPlus.replace(16, 17, "G");
+//         System.out.println(builderPlus);
+
+//         builderPlus.reverse().setLength(7);
+//         System.out.println(builderPlus);
+//     }
+
+//     public static void printInformation(String string) {
+
+//         System.out.println("String = " + string);
+//         System.out.println("length = " + string.length());
+//     }
+
+//     public static void printInformation(StringBuilder builder) {
+
+//         System.out.println("StringBuilder = " + builder);
+//         System.out.println("length = " + builder.length());
+//         System.out.println("capacity = " + builder.capacity());
+//     }
+// }
