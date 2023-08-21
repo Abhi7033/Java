@@ -1351,3 +1351,564 @@
 //         System.out.println("capacity = " + builder.capacity());
 //     }
 // }
+
+// Composition 
+// public class Product {
+
+//     private String model;
+//     private String manufacturer;
+//     private int width;
+//     private int height;
+//     private int depth;
+
+//     public Product(String model, String manufacturer) {
+//         this.model = model;
+//         this.manufacturer = manufacturer;
+//     }
+// }
+
+// class Monitor extends Product {
+
+//     private int size;
+//     private String resolution;
+
+//     public Monitor(String model, String manufacturer) {
+//         super(model, manufacturer);
+//     }
+
+//     public Monitor(String model, String manufacturer, int size, String resolution) {
+//         super(model, manufacturer);
+//         this.size = size;
+//         this.resolution = resolution;
+//     }
+
+//     public void drawPixelAt(int x, int y, String color) {
+//         System.out.println(String.format(
+//                 "Drawing pixel at %d,%d in color %s ", x, y, color));
+//     }
+// }
+
+// class Motherboard extends Product {
+
+//     private int ramSlots;
+//     private int cardSlots;
+//     private String bios;
+
+//     public Motherboard(String model, String manufacturer) {
+//         super(model, manufacturer);
+//     }
+
+//     public Motherboard(String model, String manufacturer, int ramSlots, int cardSlots,
+//                        String bios) {
+//         super(model, manufacturer);
+//         this.ramSlots = ramSlots;
+//         this.cardSlots = cardSlots;
+//         this.bios = bios;
+//     }
+
+//     public void loadProgram(String programName) {
+//         System.out.println("Program " + programName + " is now loading...");
+//     }
+// }
+
+// class ComputerCase extends Product {
+
+//     private String powerSupply;
+
+//     public ComputerCase(String model, String manufacturer) {
+//         super(model, manufacturer);
+//     }
+
+//     public ComputerCase(String model, String manufacturer, String powerSupply) {
+//         super(model, manufacturer);
+//         this.powerSupply = powerSupply;
+//     }
+
+//     public void pressPowerButton() {
+//         System.out.println("Power button pressed");
+//     }
+// }
+
+// public class PersonalComputer extends Product {
+
+//     private ComputerCase computerCase;
+//     private Monitor monitor;
+//     private Motherboard motherboard;
+
+//     public PersonalComputer(String model, String manufacturer,
+//                             ComputerCase computerCase, Monitor monitor,
+//                             Motherboard motherboard) {
+//         super(model, manufacturer);
+//         this.computerCase = computerCase;
+//         this.monitor = monitor;
+//         this.motherboard = motherboard;
+//     }
+
+//     public ComputerCase getComputerCase() {
+//         return computerCase;
+//     }
+
+//     public Monitor getMonitor() {
+//         return monitor;
+//     }
+
+//     public Motherboard getMotherboard() {
+//         return motherboard;
+//     }
+// }
+// ENCAPSULATION
+// public class Player {
+
+//     public String fullName;
+//     public int health;
+//     public String weapon;
+
+//     public void loseHealth(int damage) {
+
+//         health = health - damage;
+//         if (health <= 0) {
+//             System.out.println("Player knocked out of game");
+//         }
+//     }
+
+//     public int healthRemaining() {
+//         return health;
+//     }
+
+//     public void restoreHealth(int extraHealth) {
+
+//         health = health + extraHealth;
+//         if (health > 100) {
+//             System.out.println("Player restored to 100%");
+//             health = 100;
+//         }
+//     }
+// }
+
+// POLYMORPHISM
+// public class Movie {
+
+//     private String title;
+
+//     public Movie(String title) {
+//         this.title = title;
+//     }
+
+//     public void watchMovie() {
+
+//         String instanceType = this.getClass().getSimpleName();
+//         System.out.println(title + " is a " + instanceType + " film");
+//     }
+// }
+
+// class Adventure extends Movie {
+
+//     public Adventure(String title) {
+//         super(title);
+//     }
+
+//     @Override
+//     public void watchMovie() {
+//         super.watchMovie();
+//         System.out.printf(".. %s%n".repeat(3),
+//                 "Pleasant Scene",
+//                 "Scary Music",
+//                 "Something Bad Happens");
+//     }
+// }
+
+// class Comedy extends Movie {
+
+//     public Comedy(String title) {
+//         super(title);
+//     }
+
+//     @Override
+//     public void watchMovie() {
+//         super.watchMovie();
+//         System.out.printf(".. %s%n".repeat(3),
+//                 "Something funny happens",
+//                 "Something even funnier happens",
+//                 "Happy Ending");
+//     }
+// }
+
+// class ScienceFiction extends Movie {
+
+//     public ScienceFiction(String title) {
+//         super(title);
+//     }
+
+//     @Override
+//     public void watchMovie() {
+//         super.watchMovie();
+//         System.out.printf(".. %s%n".repeat(3),
+//                 "Bad Aliens do Bad Stuff",
+//                 "Space Guys Chase Aliens",
+//                 "Planet Blows Up");
+//     }
+// }
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         Movie theMovie = new Adventure("Star Wars");
+//         theMovie.watchMovie();
+//     }
+// }
+
+// ARRAYS
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         int[] myIntArray = new int[10];
+//         myIntArray[0] = 45;
+//         myIntArray[1] = 1;
+//         myIntArray[5] = 50;
+
+//         double[] myDoubleArray = new double[10];
+//         myDoubleArray[2] = 3.5;
+//         System.out.println(myDoubleArray[2]);
+
+//         int[] firstTen = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+//         System.out.println("first = " + firstTen[0]);
+//         int arrayLength = firstTen.length;
+//         System.out.println("length of array = " + arrayLength);
+//         System.out.println("last = " + firstTen[arrayLength - 1]);
+
+//         int[] newArray;
+//         newArray = new int[] {5, 4, 3, 2, 1};
+//         for (int i = 0; i < newArray.length; i++) {
+//             System.out.print(newArray[i] + " ");
+//         }
+//     }
+// }
+
+
+// Reverse an array
+// package dev.lpa;
+
+// import java.util.Arrays;
+// import java.util.Scanner;
+
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         int[] returnedArray = readIntegers();
+//         System.out.println(Arrays.toString(returnedArray));
+
+// //        int returnedMin = findMin(returnedArray);
+// //        System.out.println("min = " + returnedMin);
+
+// //        reverse(returnedArray);
+// //        System.out.println("Final: " + Arrays.toString(returnedArray));
+
+//         int[] reversedCopy = reverseCopy(returnedArray);
+//         System.out.println("After reverse " + Arrays.toString(returnedArray));
+//         System.out.println("reversedCopy " + Arrays.toString(reversedCopy));
+//     }
+
+//     private static int[] readIntegers() {
+
+//         Scanner scanner = new Scanner(System.in);
+//         System.out.println("Enter a list of integers, separated by commas:");
+//         String input = scanner.nextLine();
+
+//         String[] splits = input.split(",");
+//         int[] values = new int[splits.length];
+
+//         for (int i = 0; i < splits.length; i++) {
+//             values[i] = Integer.parseInt(splits[i].trim());
+//         }
+
+//         return values;
+//     }
+
+//     private static int findMin(int[] array) {
+
+//         int min = Integer.MAX_VALUE;
+//         for (int el : array) {
+//             if (el < min) {
+//                 min = el;
+//             }
+//         }
+
+//         return min;
+//     }
+
+//     private static void reverse(int[] array) {
+
+//         int maxIndex = array.length - 1;
+//         int halfLength = array.length / 2;
+
+//         for (int i = 0; i < halfLength; i++) {
+//             int temp = array[i];
+//             array[i] = array[maxIndex - i];
+//             array[maxIndex - i] = temp;
+//             System.out.println("--> " + Arrays.toString(array));
+//         }
+//     }
+
+//     private static int[] reverseCopy(int[] array) {
+
+//         int[] reversedArray = new int[array.length];
+//         int maxIndex = array.length - 1;
+//         for (int el : array) {
+//             reversedArray[maxIndex--] = el;
+//         }
+
+//         return reversedArray;
+//     }
+// }
+
+// Two dimensional Arrays
+
+// package dev.lpa;
+
+// import java.util.Arrays;
+
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         int[][] array2 = new int[4][4];
+//         System.out.println(Arrays.toString(array2));
+//         System.out.println("array2.length = " + array2.length);
+
+//         for (int[] outer : array2) {
+//             System.out.println(Arrays.toString(outer));
+//         }
+
+//         for (int i = 0; i < array2.length; i++) {
+//             var innerArray = array2[i];
+//             for (int j = 0; j < innerArray.length; j++) {
+// //                System.out.print(array2[i][j] + " ");
+//                 array2[i][j] = (i * 10) + (j + 1);
+//             }
+// //            System.out.println();
+//         }
+
+// //        for (var outer : array2) {
+// //            for (var element : outer) {
+// //                System.out.print(element + " ");
+// //            }
+// //            System.out.println();
+// //        }
+
+//         System.out.println(Arrays.deepToString(array2));
+//     }
+// }
+
+// ArrayList 
+
+// package dev.lpa;
+
+// import java.util.ArrayList;
+// import java.util.Arrays;
+
+// record GroceryItem(String name, String type, int count) {
+
+//     public GroceryItem(String name) {
+//         this(name, "DAIRY", 1);
+//     }
+// }
+
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         GroceryItem[] groceryArray = new GroceryItem[3];
+//         groceryArray[0] = new GroceryItem("milk");
+//         groceryArray[1] = new GroceryItem("apples", "PRODUCE", 6);
+//         groceryArray[2] = new GroceryItem("oranges", "PRODUCE", 5);
+//         System.out.println(Arrays.toString(groceryArray));
+
+//         ArrayList objectList = new ArrayList();
+//         objectList.add(new GroceryItem("Butter"));
+//         objectList.add("Yogurt");
+
+//         ArrayList<GroceryItem> groceryList = new ArrayList<>();
+//         groceryList.add(new GroceryItem("Butter"));
+//     }
+// }
+
+// Linked List
+
+// package dev.lpa;
+
+// import java.util.LinkedList;
+
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//        LinkedList<String> placesToVisit = new LinkedList<>();
+//         var placesToVisit = new LinkedList<String>();
+
+//         placesToVisit.add("Sydney");
+//         placesToVisit.add(0, "Canberra");
+//         System.out.println(placesToVisit);
+
+//         addMoreElements(placesToVisit);
+//         System.out.println(placesToVisit);
+
+//         removeElements(placesToVisit);
+//         System.out.println(placesToVisit);
+
+//     }
+
+//     private static void addMoreElements(LinkedList<String> list) {
+
+//         list.addFirst("Darwin");
+//         list.addLast("Hobart");
+//         // Queue methods
+//         list.offer("Melbourne");
+//         list.offerFirst("Brisbane");
+//         list.offerLast("Toowoomba");
+//         // Stack Methods
+//         list.push("Alice Springs");
+
+//     }
+
+//     private static void removeElements(LinkedList<String> list) {
+
+//         list.remove(4);
+//         list.remove("Brisbane");
+
+//         System.out.println(list);
+//         String s1 = list.remove(); // removes first element
+//         System.out.println(s1 + " was removed");
+
+//         String s2 = list.removeFirst(); // removes first element
+//         System.out.println(s2 + " was removed");
+
+//         String s3 = list.removeLast(); // removes last element
+//         System.out.println(s3 + " was removed");
+//         // Queue/Deque poll methods
+//         String p1 = list.poll();  // removes first element
+//         System.out.println(p1 + " was removed");
+//         String p2 = list.pollFirst();  // removes first element
+//         System.out.println(p2 + " was removed");
+//         String p3 = list.pollLast();  // removes last element
+//         System.out.println(p3 + " was removed");
+
+//         list.push("Sydney");
+//         list.push("Brisbane");
+//         list.push("Canberra");
+//         System.out.println(list);
+
+//         String p4 = list.pop();  // removes first element
+//         System.out.println(p4 + " was removed");
+
+//     }
+// }
+//   private static void gettingElements(LinkedList<String> list) {
+
+//         System.out.println("Retrieved Element = " + list.get(4));
+
+//         System.out.println("First Element = " + list.getFirst());
+//         System.out.println("Last Element = " + list.getLast());
+
+//         System.out.println("Darwin is at position: " + list.indexOf("Darwin"));
+//         System.out.println("Melbourne is at position: " +
+//                 list.lastIndexOf("Melbourne"));
+//         // Queue retrieval method
+//         System.out.println("Element from element() = " + list.element());
+//         // Stack retrieval methods
+//         System.out.println("Element from peek() = " + list.peek());
+//         System.out.println("Element from peekFirst() = " + list.peekFirst());
+//         System.out.println("Element from peekLast() = " + list.peekLast());
+//     }
+
+//     public static void printItinerary(LinkedList<String> list) {
+
+//         System.out.println("Trip starts at " + list.getFirst());
+//         for (int i = 1; i < list.size(); i++) {
+//             System.out.println("--> From: " + list.get(i - 1) + " to " + list.get(i));
+//         }
+//         System.out.println("Trip ends at " + list.getLast());
+//     }
+
+//     public static void printItinerary2(LinkedList<String> list) {
+
+//         System.out.println("Trip starts at " + list.getFirst());
+//         String previousTown = list.getFirst();
+//         for (String town : list) {
+//             System.out.println("--> From: " + previousTown + " to " + town);
+//             previousTown = town;
+//         }
+
+//         System.out.println("Trip ends at " + list.getLast());
+//     }
+
+//     public static void printItinerary3(LinkedList<String> list) {
+
+//         System.out.println("Trip starts at " + list.getFirst());
+//         String previousTown = list.getFirst();
+//         ListIterator<String> iterator = list.listIterator(1);
+//         while (iterator.hasNext()) {
+//             var town = iterator.next();
+//             System.out.println("--> From: " + previousTown + " to " + town);
+//             previousTown = town;
+//         }
+
+//         System.out.println("Trip ends at " + list.getLast());
+//     }
+
+// Iterator
+//  private static void testIterator(LinkedList<String> list) {
+
+//         var iterator = list.listIterator();
+//         while (iterator.hasNext()) {
+// //            System.out.println(iterator.next());
+//             if (iterator.next().equals("Brisbane")) {
+//                 iterator.add("Lake Wivenhoe");
+//             }
+//         }
+//         while (iterator.hasPrevious()) {
+//             System.out.println(iterator.previous());
+//         }
+
+//         System.out.println(list);
+
+//         var iterator2 = list.listIterator(3);
+//         System.out.println(iterator2.previous());
+
+//     }
+
+
+// AutoBoxing and UnBoxing
+
+// package dev.lpa;
+
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         Integer boxedInt = Integer.valueOf(15);      // preferred but unnecessary
+//         Integer deprecatedBoxing = new Integer(15);  // deprecated since JDK 9
+//         int unboxedInt = boxedInt.intValue();        // unnecessary
+
+//         // Automatic
+//         Integer autoBoxed = 15;
+//         int autoUnboxed = autoBoxed;
+//         System.out.println(autoBoxed.getClass().getName());
+// //        System.out.println(autoUnboxed.getClass().getName());
+
+//         Double resultBoxed = getLiteralDoublePrimitive();
+//         double resultUnboxed = getDoubleObject();
+
+//     }
+
+//     private static Double getDoubleObject() {
+
+//         return Double.valueOf(100.00);
+//     }
+
+//     private static double getLiteralDoublePrimitive() {
+
+//         return 100.0;
+//     }
+// }
