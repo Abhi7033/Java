@@ -1953,8 +1953,249 @@
 
 // }
 
-public class Hello {
-    public static void main(String[] args) {
-        Integer p=new Integer(8);
-    }
-}
+// public class Hello {
+//     public static void main(String[] args) {
+//         // Integer p=new Integer(8);
+//         System.out.println("hello World");
+//     }
+// }
+
+// Generics
+
+
+// import java.util.ArrayList;
+// import java.util.Arrays;
+
+// public class CustomArrayList {
+
+//     private int[] data;
+//     private static int DEFAULT_SIZE = 10;
+//     private int size = 0; // also working as index value
+
+//     public CustomArrayList() {
+//         this.data = new int[DEFAULT_SIZE];
+//     }
+
+//     public void add(int num) {
+//         if (isFull()) {
+//             resize();
+//         }
+//         data[size++] = num;
+//     }
+
+//     private void resize() {
+//         int[] temp = new int[data.length * 2];
+
+//         // copy the current items in the new array
+//         for (int i = 0; i < data.length; i++) {
+//             temp[i] = data[i];
+//         }
+//         data = temp;
+//     }
+
+//     private boolean isFull() {
+//         return size == data.length;
+//     }
+
+//     public int remove() {
+//         int removed = data[--size];
+//         return removed;
+//     }
+
+//     public int get(int index) {
+//         return data[index];
+//     }
+
+//     public int size() {
+//         return size;
+//     }
+
+//     public void set(int index, int value) {
+//         data[index] = value;
+//     }
+
+//     @Override
+//     public String toString() {
+//         return "CustomArrayList{" +
+//                 "data=" + Arrays.toString(data) +
+//                 ", size=" + size +
+//                 '}';
+//     }
+
+//     public static void main(String[] args) {
+// //        ArrayList list = new ArrayList();
+//         CustomArrayList list = new CustomArrayList();
+// //        list.add(3);
+// //        list.add(5);
+// //        list.add(9);
+
+//         for (int i = 0; i < 14; i++) {
+//             list.add(2 * i);
+//         }
+
+//         System.out.println(list);
+
+//         ArrayList<Integer> list2 = new ArrayList<>();
+// //        list2.add("dfghj");
+//     }
+// }
+// Custom generic ArrayList
+
+
+// import java.util.ArrayList;
+// import java.util.Arrays;
+
+// // https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html#createObjects
+
+// public class CustomGenArrayList<T> {
+
+//     private Object[] data;
+//     private static int DEFAULT_SIZE = 10;
+//     private int size = 0; // also working as index value
+
+//     public CustomGenArrayList() {
+//         data = new Object[DEFAULT_SIZE];
+//     }
+
+//     public void add(T num) {
+//         if (isFull()) {
+//             resize();
+//         }
+//         data[size++] = num;
+//     }
+
+//     private void resize() {
+//         Object[] temp = new Object[data.length * 2];
+
+//         // copy the current items in the new array
+//         for (int i = 0; i < data.length; i++) {
+//             temp[i] = data[i];
+//         }
+//         data = temp;
+//     }
+
+//     private boolean isFull() {
+//         return size == data.length;
+//     }
+
+//     public T remove() {
+//         T removed = (T)(data[--size]);
+//         return removed;
+//     }
+
+//     public T get(int index) {
+//         return (T)data[index];
+//     }
+
+//     public int size() {
+//         return size;
+//     }
+
+//     public void set(int index, T value) {
+//         data[index] = value;
+//     }
+
+//     @Override
+//     public String toString() {
+//         return "CustomGenArrayList{" +
+//                 "data=" + Arrays.toString(data) +
+//                 ", size=" + size +
+//                 '}';
+//     }
+
+//     public static void main(String[] args) {
+// //        ArrayList list = new ArrayList();
+//         CustomGenArrayList list = new CustomGenArrayList();
+// //        list.add(3);
+// //        list.add(5);
+// //        list.add(9);
+
+// //        for (int i = 0; i < 14; i++) {
+// //            list.add(2 * i);
+// //        }
+
+// //        System.out.println(list);
+
+//         ArrayList<Integer> list2 = new ArrayList<>();
+// //        list2.add("dfghj");
+
+
+//         CustomGenArrayList<Integer> list3 = new CustomGenArrayList<>();
+//         for (int i = 0; i < 14; i++) {
+//             list3.add(2 * i);
+//         }
+
+//         System.out.println(list3);
+
+//     }
+// }
+// Lambda Functions
+
+
+// import java.util.ArrayList;
+// import java.util.function.Consumer;
+
+// public class LambdaFunctions {
+//     public static void main(String[] args) {
+//         ArrayList<Integer> arr = new ArrayList<>();
+//         for (int i = 0; i < 5; i++) {
+//             arr.add(i + 1);
+//         }
+// //        arr.forEach((item) -> System.out.println(item * 2));
+
+//         Consumer<Integer> fun = (item) -> System.out.println(item * 2);
+//         arr.forEach(fun);
+
+//         Operation sum = (a, b) -> a + b;
+//         Operation prod = (a, b) -> a * b;
+//         Operation sub = (a, b) -> a - b;
+
+//         LambdaFunctions myCalculator = new LambdaFunctions();
+//         System.out.println(myCalculator.operate(5, 3, sum));
+//         System.out.println(myCalculator.operate(5, 3, prod));
+//         System.out.println(myCalculator.operate(5, 3, sub));
+//     }
+
+//     private int operate(int a, int b, Operation op) {
+//         return op.operation(a, b);
+//     }
+// }
+
+// interface Operation {
+//     int operation(int a, int b);
+// }
+
+// Exception Handling
+
+
+// public class Main {
+//     public static void main(String[] args) {
+//         int a = 5;
+//         int b = 0;
+//         try {
+// //            divide(a, b);
+//             // mimicing
+//             String name = "Kunal";
+//             if (name.equals("Kunal")) {
+//                 throw new MyException("name is kunal");
+//             }
+//         } catch (MyException e) {
+//             System.out.println(e.getMessage());
+//         } catch (ArithmeticException e) {
+//             System.out.println(e.getMessage());
+//         } catch (Exception e) {
+//             System.out.println("normal exception");
+//         } finally {
+//             System.out.println("this will always execute");
+//         }
+
+//     }
+
+//     static int divide(int a, int b) throws ArithmeticException{
+//         if (b == 0) {
+//             throw new ArithmeticException("please do no divide by zero");
+//         }
+
+//         return  a / b;
+//     }
+// }
