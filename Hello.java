@@ -1952,3 +1952,9 @@
 //     }
 
 // }
+
+public class Hello {
+    public static void main(String[] args) {
+        Integer p=new Integer(8);
+    }
+}
