@@ -2276,3 +2276,89 @@
 //        System.out.println(list);
 //      }
 // }
+
+// Queue
+// import java.util.LinkedList;
+// import java.util.Queue;
+
+// public class LearnLinkedListQueue {
+
+//     public static void main(String[] args) {
+
+//         Queue<Integer> queue = new LinkedList<>();
+
+//         queue.offer(12);
+//         queue.offer(24);
+//         queue.offer(36);
+
+//         System.out.println(queue);
+
+//         System.out.println(queue.poll());
+
+//         System.out.println(queue);
+
+//         System.out.println(queue.peek());
+
+//     }
+// }
+
+// PriorityQueue
+// import java.util.Comparator;
+// import java.util.PriorityQueue;
+// import java.util.Queue;
+
+// public class LearnPriorityQueue {
+
+//     public static void main(String[] args) {
+
+//         Queue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
+
+//         pq.offer(40);
+//         pq.offer(12);
+//         pq.offer(24);
+//         pq.offer(36);
+
+//         System.out.println(pq);
+//         pq.poll();
+//         System.out.println(pq);
+
+//         System.out.println(pq.peek());
+
+//     }
+
+// }
+
+// ArrayDequeue
+// import java.util.ArrayDeque;
+
+// public class LearnArrayDeque {
+
+//     public static void main(String[] args) {
+
+//         ArrayDeque<Integer> adq = new ArrayDeque<>();
+
+//         adq.offer(23);
+//         adq.offerFirst(12);
+//         adq.offerLast(45);
+//         adq.offer(26);
+
+//         System.out.println(adq);
+
+//         System.out.println(adq.peek());
+//         System.out.println(adq.peekFirst());
+//         System.out.println(adq.peekLast());
+
+//         System.out.println(adq.poll());
+//         System.out.println("poll() " +adq);
+
+//         System.out.println(adq.pollFirst());
+//         System.out.println("pollFirst() " +adq);
+
+//         System.out.println(adq.pollLast());
+//         System.out.println("pollLast() " +adq);
+
+//     }
+
+// }
+
+
